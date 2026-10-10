@@ -1,0 +1,9 @@
+.DS_Store
+Thumbs.db
+*.log
+node_modules/
+test-results/
+playwright-report/
+blob-report/
+# personal backups and plan files exported from the app
+iron-ledger-*.json

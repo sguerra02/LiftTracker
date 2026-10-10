@@ -1,0 +1,1041 @@
+{
+ "decl": {
+  "KEY": "js/core.js",
+  "DAY": "js/core.js",
+  "$": "js/core.js",
+  "esc": "js/core.js",
+  "uid": "js/core.js",
+  "r2": "js/core.js",
+  "U": "js/core.js",
+  "UF": "js/core.js",
+  "fromLb": "js/core.js",
+  "toLb": "js/core.js",
+  "ST": "js/core.js",
+  "fmtW": "js/core.js",
+  "iso": "js/core.js",
+  "todayISO": "js/core.js",
+  "parseISO": "js/core.js",
+  "MON": "js/core.js",
+  "WD": "js/core.js",
+  "fmtD": "js/core.js",
+  "fmtDL": "js/core.js",
+  "PAT": "js/core.js",
+  "LOADS": "js/core.js",
+  "GZ": "js/core.js",
+  "W531": "js/core.js",
+  "WEEK_NAME": "js/core.js",
+  "REST": "js/core.js",
+  "DERIVED": "js/core.js",
+  "FSL_PCT": "js/core.js",
+  "REP_PCT": "js/core.js",
+  "repPct": "js/core.js",
+  "TYPES": "js/core.js",
+  "SCHEME_NAME": "js/core.js",
+  "LIB": "js/core.js",
+  "sl": "js/core.js",
+  "day": "js/core.js",
+  "mkPlan": "js/core.js",
+  "defaultPlans": "js/core.js",
+  "STATIONS": "js/core.js",
+  "STD_PLATES": "js/core.js",
+  "TYPICAL_PLATES": "js/core.js",
+  "defaultEquipment": "js/core.js",
+  "defaultState": "js/core.js",
+  "fixEntry": "js/core.js",
+  "migrate": "js/core.js",
+  "storageOk": "js/core.js",
+  "S": "js/core.js",
+  "realBackup": "js/core.js",
+  "load": "js/core.js",
+  "dataVer": "js/core.js",
+  "memo": "js/core.js",
+  "touch": "js/core.js",
+  "memoize": "js/core.js",
+  "save": "js/core.js",
+  "saveT": "js/core.js",
+  "saveSoon": "js/core.js",
+  "eqVer": "js/equipment.js",
+  "cache": "js/equipment.js",
+  "eqChanged": "js/equipment.js",
+  "station": "js/equipment.js",
+  "stationOn": "js/equipment.js",
+  "exById": "js/equipment.js",
+  "plateItems": "js/equipment.js",
+  "better": "js/equipment.js",
+  "sideTable": "js/equipment.js",
+  "cost": "js/equipment.js",
+  "loadOptions": "js/equipment.js",
+  "roundLoad": "js/equipment.js",
+  "snap5": "js/equipment.js",
+  "roundDown": "js/equipment.js",
+  "stepUp": "js/equipment.js",
+  "missing": "js/equipment.js",
+  "avail": "js/equipment.js",
+  "unitW": "js/equipment.js",
+  "wtText": "js/equipment.js",
+  "plateGfx": "js/equipment.js",
+  "loadHTML": "js/equipment.js",
+  "THINGS": "js/fun.js",
+  "LADDER": "js/fun.js",
+  "tonsParts": "js/fun.js",
+  "massParts": "js/fun.js",
+  "fmtMass": "js/fun.js",
+  "lastThing": "js/fun.js",
+  "bwPoints": "js/fun.js",
+  "lastBW": "js/fun.js",
+  "entryVolume": "js/fun.js",
+  "sessionVolume": "js/fun.js",
+  "fmtBig": "js/fun.js",
+  "compareText": "js/fun.js",
+  "funHTML": "js/fun.js",
+  "prevMaxW": "js/fun.js",
+  "checkEntries": "js/fun.js",
+  "activePlan": "js/engine.js",
+  "schemeOf": "js/engine.js",
+  "slotKey": "js/engine.js",
+  "schemePct": "js/engine.js",
+  "tgt": "js/engine.js",
+  "tgtText": "js/engine.js",
+  "modeWeight": "js/engine.js",
+  "evalEntry": "js/engine.js",
+  "weekLen": "js/engine.js",
+  "cycleLen": "js/engine.js",
+  "planWeek": "js/engine.js",
+  "derivedW": "js/engine.js",
+  "slotTarget": "js/engine.js",
+  "planSessions": "js/engine.js",
+  "planState": "js/engine.js",
+  "planStateRaw": "js/engine.js",
+  "lastUsed": "js/engine.js",
+  "est1RM": "js/engine.js",
+  "fromOneRM": "js/engine.js",
+  "suggestStart": "js/engine.js",
+  "planKeys": "js/engine.js",
+  "setupGroups": "js/engine.js",
+  "buildEntries": "js/engine.js",
+  "verdictText": "js/engine.js",
+  "schemeChip": "js/engine.js",
+  "tab": "js/state.js",
+  "V": "js/state.js",
+  "EDIT": "js/state.js",
+  "cur": "js/state.js",
+  "TABS": "js/state.js",
+  "SUBS": "js/state.js",
+  "PARENT": "js/state.js",
+  "goTab": "js/state.js",
+  "render": "js/state.js",
+  "renderBanner": "js/state.js",
+  "goalStrip": "js/views/today.js",
+  "viewToday": "js/views/today.js",
+  "resultPanel": "js/views/today.js",
+  "slotDesc": "js/views/today.js",
+  "pctLabel": "js/views/today.js",
+  "setupInfo": "js/views/today.js",
+  "viewStart": "js/views/today.js",
+  "viewLogging": "js/views/today.js",
+  "warmups": "js/views/today.js",
+  "warmHTML": "js/views/today.js",
+  "entryCard": "js/views/today.js",
+  "sessionMetrics": "js/views/history.js",
+  "calendarHTML": "js/views/history.js",
+  "peakHTML": "js/views/history.js",
+  "bwHTML": "js/views/history.js",
+  "viewHistory": "js/views/history.js",
+  "addExHTML": "js/views/history.js",
+  "viewEditor": "js/views/history.js",
+  "STREAK_MIN": "js/views/trophies.js",
+  "LEVELS": "js/views/trophies.js",
+  "STANDARDS": "js/views/trophies.js",
+  "MAINS": "js/views/trophies.js",
+  "BADGES": "js/views/trophies.js",
+  "LIFT_BADGES_LB": "js/views/trophies.js",
+  "LIFT_BADGES_KG": "js/views/trophies.js",
+  "liftBadges": "js/views/trophies.js",
+  "VOL_BADGES": "js/views/trophies.js",
+  "badges": "js/views/trophies.js",
+  "sortedSessions": "js/views/trophies.js",
+  "weekKey": "js/views/trophies.js",
+  "weekBefore": "js/views/trophies.js",
+  "e1of": "js/views/trophies.js",
+  "analyze": "js/views/trophies.js",
+  "analyzeRaw": "js/views/trophies.js",
+  "ladder": "js/views/trophies.js",
+  "bodyweight": "js/views/trophies.js",
+  "strengthRows": "js/views/trophies.js",
+  "levelBar": "js/views/trophies.js",
+  "viewTrophies": "js/views/trophies.js",
+  "yearReview": "js/views/trophies.js",
+  "MUSCLES": "js/views/report.js",
+  "EX_MUSCLES": "js/views/report.js",
+  "PAT_MUSCLES": "js/views/report.js",
+  "musclesFor": "js/views/report.js",
+  "weekSessions": "js/views/report.js",
+  "weekStats": "js/views/report.js",
+  "mirrorPath": "js/views/report.js",
+  "BODY_OUTLINE": "js/views/report.js",
+  "BODY_FRONT": "js/views/report.js",
+  "BODY_BACK": "js/views/report.js",
+  "bodySVG": "js/views/report.js",
+  "deltaHTML": "js/views/report.js",
+  "bestSet": "js/views/report.js",
+  "REP": "js/views/report.js",
+  "muscleReadout": "js/views/report.js",
+  "prevSame": "js/views/report.js",
+  "exStats": "js/views/report.js",
+  "sessStats": "js/views/report.js",
+  "chg": "js/views/report.js",
+  "setTxt": "js/views/report.js",
+  "exRows": "js/views/report.js",
+  "compareSummary": "js/views/report.js",
+  "lastVsHTML": "js/views/report.js",
+  "viewReport": "js/views/report.js",
+  "LEVEL_RATIOS": "js/views/wizard.js",
+  "wizInit": "js/views/wizard.js",
+  "viewWizard": "js/views/wizard.js",
+  "wizFinish": "js/views/wizard.js",
+  "convertUnits": "js/views/wizard.js",
+  "GOAL_MEASURES": "js/views/goals.js",
+  "goalPoints": "js/views/goals.js",
+  "goalNow": "js/views/goals.js",
+  "goalReached": "js/views/goals.js",
+  "planGoalEta": "js/views/goals.js",
+  "trendGoalEta": "js/views/goals.js",
+  "fmtEta": "js/views/goals.js",
+  "goalSuggest": "js/views/goals.js",
+  "viewGoals": "js/views/goals.js",
+  "drawGoalCharts": "js/views/goals.js",
+  "autoSpw": "js/views/projection.js",
+  "project": "js/views/projection.js",
+  "paceW": "js/views/projection.js",
+  "viewProjection": "js/views/projection.js",
+  "niceTicks": "js/charts.js",
+  "lineChart": "js/charts.js",
+  "drawCharts": "js/charts.js",
+  "viewPlans": "js/views/plans.js",
+  "exOptions": "js/views/plans.js",
+  "paramInputs": "js/views/plans.js",
+  "viewPlanEdit": "js/views/plans.js",
+  "viewEquipment": "js/views/equipment.js",
+  "backupDue": "js/views/data.js",
+  "viewData": "js/views/data.js",
+  "rng": "js/sample.js",
+  "makeSample": "js/sample.js",
+  "timer": "js/ui.js",
+  "actx": "js/ui.js",
+  "beep": "js/ui.js",
+  "startRest": "js/ui.js",
+  "tick": "js/ui.js",
+  "wake": "js/ui.js",
+  "wakeOn": "js/ui.js",
+  "wakeOff": "js/ui.js",
+  "toast": "js/ui.js",
+  "confirmFn": "js/ui.js",
+  "askConfirm": "js/ui.js",
+  "closeModal": "js/ui.js",
+  "P": "js/ui.js",
+  "newSlot": "js/ui.js",
+  "ACT": "js/actions.js",
+  "CH": "js/actions.js",
+  "IN": "js/actions.js",
+  "readImportFile": "js/actions.js",
+  "doImport": "js/actions.js",
+  "rz": "js/actions.js"
+ },
+ "out": {
+  "js/core.js": {
+   "need": {
+    "js/state.js": [
+     "renderBanner"
+    ]
+   },
+   "writes": [],
+   "unknown": [
+    "document",
+    "String",
+    "Math",
+    "isNaN",
+    "Date",
+    "Number",
+    "Object",
+    "Array",
+    "undefined",
+    "Map",
+    "localStorage",
+    "JSON",
+    "clearTimeout",
+    "setTimeout"
+   ]
+  },
+  "js/equipment.js": {
+   "need": {
+    "js/core.js": [
+     "touch",
+     "S",
+     "r2",
+     "ST",
+     "fmtW",
+     "U",
+     "toLb",
+     "esc"
+    ]
+   },
+   "writes": [],
+   "unknown": [
+    "Map",
+    "Math"
+   ]
+  },
+  "js/fun.js": {
+   "need": {
+    "js/core.js": [
+     "U",
+     "S",
+     "memoize",
+     "toLb",
+     "uid",
+     "esc",
+     "fromLb",
+     "fmtW"
+    ],
+    "js/equipment.js": [
+     "exById"
+    ],
+    "js/state.js": [
+     "EDIT"
+    ]
+   },
+   "writes": [],
+   "unknown": [
+    "Math",
+    "String",
+    "Set"
+   ]
+  },
+  "js/engine.js": {
+   "need": {
+    "js/core.js": [
+     "S",
+     "repPct",
+     "GZ",
+     "W531",
+     "ST",
+     "FSL_PCT",
+     "DERIVED",
+     "memoize",
+     "fromLb",
+     "uid",
+     "fmtW",
+     "U",
+     "WEEK_NAME"
+    ],
+    "js/equipment.js": [
+     "snap5",
+     "stepUp",
+     "roundDown",
+     "exById",
+     "wtText"
+    ]
+   },
+   "writes": [],
+   "unknown": [
+    "Array",
+    "Math",
+    "Object",
+    "Map",
+    "parseFloat"
+   ]
+  },
+  "js/state.js": {
+   "need": {
+    "js/core.js": [
+     "S",
+     "$",
+     "storageOk"
+    ],
+    "js/views/goals.js": [
+     "viewGoals"
+    ],
+    "js/views/today.js": [
+     "viewToday"
+    ],
+    "js/views/history.js": [
+     "viewHistory"
+    ],
+    "js/views/trophies.js": [
+     "viewTrophies"
+    ],
+    "js/views/report.js": [
+     "viewReport"
+    ],
+    "js/views/projection.js": [
+     "viewProjection"
+    ],
+    "js/views/plans.js": [
+     "viewPlans"
+    ],
+    "js/views/equipment.js": [
+     "viewEquipment"
+    ],
+    "js/views/data.js": [
+     "viewData",
+     "backupDue"
+    ],
+    "js/views/wizard.js": [
+     "viewWizard"
+    ],
+    "js/charts.js": [
+     "drawCharts"
+    ]
+   },
+   "writes": [],
+   "unknown": [
+    "location",
+    "localStorage",
+    "JSON"
+   ]
+  },
+  "js/views/today.js": {
+   "need": {
+    "js/core.js": [
+     "S",
+     "fmtW",
+     "esc",
+     "fmtDL",
+     "U",
+     "fromLb",
+     "ST"
+    ],
+    "js/views/trophies.js": [
+     "MAINS",
+     "analyze",
+     "badges"
+    ],
+    "js/views/goals.js": [
+     "goalNow",
+     "goalReached"
+    ],
+    "js/engine.js": [
+     "activePlan",
+     "planState",
+     "schemeOf",
+     "slotKey",
+     "slotTarget",
+     "schemeChip",
+     "tgtText",
+     "planSessions",
+     "verdictText",
+     "tgt",
+     "fromOneRM",
+     "setupGroups",
+     "lastUsed",
+     "suggestStart"
+    ],
+    "js/state.js": [
+     "V"
+    ],
+    "js/equipment.js": [
+     "exById",
+     "missing",
+     "loadHTML",
+     "wtText",
+     "roundLoad",
+     "loadOptions",
+     "roundDown",
+     "avail"
+    ],
+    "js/views/data.js": [
+     "backupDue"
+    ],
+    "js/fun.js": [
+     "funHTML",
+     "sessionVolume"
+    ],
+    "js/views/history.js": [
+     "addExHTML"
+    ]
+   },
+   "writes": [],
+   "unknown": [
+    "Math",
+    "isNaN",
+    "String"
+   ]
+  },
+  "js/views/history.js": {
+   "need": {
+    "js/engine.js": [
+     "modeWeight",
+     "schemeChip",
+     "tgtText"
+    ],
+    "js/state.js": [
+     "V",
+     "EDIT"
+    ],
+    "js/core.js": [
+     "iso",
+     "todayISO",
+     "esc",
+     "DAY",
+     "U",
+     "fmtW",
+     "fmtD",
+     "parseISO",
+     "S",
+     "fmtDL"
+    ],
+    "js/views/trophies.js": [
+     "MAINS",
+     "e1of",
+     "analyze"
+    ],
+    "js/fun.js": [
+     "fmtBig",
+     "bwPoints",
+     "sessionVolume",
+     "massParts",
+     "funHTML",
+     "checkEntries"
+    ],
+    "js/equipment.js": [
+     "exById",
+     "wtText",
+     "avail"
+    ],
+    "js/views/today.js": [
+     "entryCard"
+    ]
+   },
+   "writes": [],
+   "unknown": [
+    "Math",
+    "Date",
+    "Number",
+    "String",
+    "Set"
+   ]
+  },
+  "js/views/trophies.js": {
+   "need": {
+    "js/core.js": [
+     "U",
+     "fromLb",
+     "memoize",
+     "S",
+     "parseISO",
+     "iso",
+     "fmtW",
+     "toLb",
+     "todayISO",
+     "DAY",
+     "fmtD",
+     "esc",
+     "ST"
+    ],
+    "js/fun.js": [
+     "massParts",
+     "fmtMass",
+     "sessionVolume",
+     "fmtBig",
+     "LADDER",
+     "lastBW",
+     "THINGS",
+     "funHTML"
+    ],
+    "js/equipment.js": [
+     "exById",
+     "unitW"
+    ],
+    "js/state.js": [
+     "V"
+    ]
+   },
+   "writes": [],
+   "unknown": [
+    "String",
+    "Date",
+    "Math",
+    "Object",
+    "Set"
+   ]
+  },
+  "js/views/report.js": {
+   "need": {
+    "js/equipment.js": [
+     "exById"
+    ],
+    "js/core.js": [
+     "parseISO",
+     "iso",
+     "esc",
+     "fmtW",
+     "fmtDL",
+     "U",
+     "fmtD",
+     "S"
+    ],
+    "js/views/trophies.js": [
+     "sortedSessions",
+     "e1of",
+     "analyze",
+     "weekKey",
+     "STREAK_MIN"
+    ],
+    "js/fun.js": [
+     "sessionVolume",
+     "fmtBig",
+     "fmtMass",
+     "compareText",
+     "massParts"
+    ],
+    "js/state.js": [
+     "V"
+    ]
+   },
+   "writes": [],
+   "unknown": [
+    "Date",
+    "Math",
+    "Object",
+    "Set",
+    "isNaN",
+    "Boolean"
+   ]
+  },
+  "js/views/wizard.js": {
+   "need": {
+    "js/core.js": [
+     "TYPICAL_PLATES",
+     "esc",
+     "STD_PLATES",
+     "STATIONS",
+     "S",
+     "TYPES",
+     "uid",
+     "todayISO",
+     "save"
+    ],
+    "js/state.js": [
+     "V",
+     "goTab",
+     "render"
+    ],
+    "js/views/trophies.js": [
+     "MAINS"
+    ],
+    "js/equipment.js": [
+     "eqChanged"
+    ],
+    "js/ui.js": [
+     "toast"
+    ]
+   },
+   "writes": [],
+   "unknown": [
+    "Object",
+    "Math",
+    "String",
+    "Number",
+    "window",
+    "isNaN"
+   ]
+  },
+  "js/views/goals.js": {
+   "need": {
+    "js/core.js": [
+     "memoize",
+     "parseISO",
+     "DAY",
+     "fmtD",
+     "ST",
+     "S",
+     "esc",
+     "U",
+     "fmtW",
+     "fmtDL"
+    ],
+    "js/views/trophies.js": [
+     "sortedSessions",
+     "e1of",
+     "bodyweight",
+     "STANDARDS",
+     "LEVELS",
+     "MAINS"
+    ],
+    "js/engine.js": [
+     "activePlan",
+     "schemePct"
+    ],
+    "js/state.js": [
+     "V"
+    ],
+    "js/views/projection.js": [
+     "autoSpw",
+     "project"
+    ],
+    "js/fun.js": [
+     "fmtBig"
+    ],
+    "js/charts.js": [
+     "lineChart"
+    ]
+   },
+   "writes": [],
+   "unknown": [
+    "Math",
+    "Date",
+    "Object",
+    "document"
+   ]
+  },
+  "js/views/projection.js": {
+   "need": {
+    "js/core.js": [
+     "S",
+     "parseISO",
+     "DAY",
+     "ST",
+     "DERIVED",
+     "esc",
+     "fmtD",
+     "fmtW"
+    ],
+    "js/engine.js": [
+     "planState",
+     "cycleLen",
+     "schemeOf",
+     "slotKey",
+     "suggestStart",
+     "activePlan"
+    ],
+    "js/equipment.js": [
+     "exById",
+     "avail",
+     "stepUp",
+     "roundDown",
+     "loadOptions"
+    ],
+    "js/state.js": [
+     "V"
+    ],
+    "js/views/today.js": [
+     "slotDesc"
+    ]
+   },
+   "writes": [],
+   "unknown": [
+    "Date",
+    "Math",
+    "Object"
+   ]
+  },
+  "js/charts.js": {
+   "need": {
+    "js/core.js": [
+     "r2",
+     "DAY",
+     "fmtW",
+     "fmtD",
+     "fmtDL",
+     "iso",
+     "esc",
+     "$",
+     "S",
+     "parseISO",
+     "U"
+    ],
+    "js/state.js": [
+     "V"
+    ],
+    "js/views/history.js": [
+     "sessionMetrics"
+    ],
+    "js/views/report.js": [
+     "bestSet"
+    ],
+    "js/fun.js": [
+     "fmtBig",
+     "bwPoints"
+    ],
+    "js/views/goals.js": [
+     "drawGoalCharts"
+    ],
+    "js/engine.js": [
+     "activePlan",
+     "modeWeight"
+    ],
+    "js/views/projection.js": [
+     "project",
+     "autoSpw",
+     "paceW"
+    ],
+    "js/equipment.js": [
+     "exById"
+    ]
+   },
+   "writes": [],
+   "unknown": [
+    "Math",
+    "Date"
+   ]
+  },
+  "js/views/plans.js": {
+   "need": {
+    "js/state.js": [
+     "V"
+    ],
+    "js/core.js": [
+     "S",
+     "TYPES",
+     "esc",
+     "fmtDL",
+     "U",
+     "SCHEME_NAME"
+    ],
+    "js/engine.js": [
+     "planSessions",
+     "schemeOf",
+     "weekLen"
+    ],
+    "js/equipment.js": [
+     "avail",
+     "exById",
+     "missing"
+    ]
+   },
+   "writes": [],
+   "unknown": [
+    "Object",
+    "Math"
+   ]
+  },
+  "js/views/equipment.js": {
+   "need": {
+    "js/core.js": [
+     "S",
+     "U",
+     "ST",
+     "LOADS",
+     "esc",
+     "fmtW",
+     "PAT"
+    ],
+    "js/state.js": [
+     "V"
+    ],
+    "js/equipment.js": [
+     "roundLoad",
+     "loadOptions",
+     "loadHTML",
+     "missing"
+    ]
+   },
+   "writes": [],
+   "unknown": [
+    "Object"
+   ]
+  },
+  "js/views/data.js": {
+   "need": {
+    "js/core.js": [
+     "S",
+     "fmtDL",
+     "todayISO",
+     "esc",
+     "U",
+     "storageOk"
+    ],
+    "js/state.js": [
+     "V"
+    ]
+   },
+   "writes": [],
+   "unknown": []
+  },
+  "js/sample.js": {
+   "need": {
+    "js/core.js": [
+     "defaultState",
+     "S",
+     "DAY",
+     "iso",
+     "touch",
+     "uid",
+     "r2"
+    ],
+    "js/equipment.js": [
+     "eqChanged"
+    ],
+    "js/engine.js": [
+     "planKeys",
+     "suggestStart",
+     "planState",
+     "buildEntries"
+    ]
+   },
+   "writes": [
+    "S"
+   ],
+   "unknown": [
+    "Math",
+    "Date",
+    "String"
+   ]
+  },
+  "js/ui.js": {
+   "need": {
+    "js/core.js": [
+     "$",
+     "S",
+     "esc",
+     "TYPES",
+     "uid"
+    ],
+    "js/equipment.js": [
+     "avail"
+    ]
+   },
+   "writes": [],
+   "unknown": [
+    "window",
+    "Date",
+    "Math",
+    "String",
+    "navigator",
+    "setInterval",
+    "clearTimeout",
+    "setTimeout",
+    "Array"
+   ]
+  },
+  "js/actions.js": {
+   "need": {
+    "js/state.js": [
+     "goTab",
+     "V",
+     "tab",
+     "render",
+     "cur",
+     "EDIT"
+    ],
+    "js/ui.js": [
+     "P",
+     "toast",
+     "wakeOn",
+     "startRest",
+     "timer",
+     "wakeOff",
+     "askConfirm",
+     "tick",
+     "confirmFn",
+     "closeModal",
+     "newSlot"
+    ],
+    "js/engine.js": [
+     "setupGroups",
+     "suggestStart",
+     "fromOneRM",
+     "activePlan",
+     "planState",
+     "buildEntries",
+     "lastUsed",
+     "tgt"
+    ],
+    "js/equipment.js": [
+     "exById",
+     "roundLoad",
+     "eqChanged",
+     "station",
+     "loadOptions",
+     "loadHTML"
+    ],
+    "js/core.js": [
+     "uid",
+     "todayISO",
+     "S",
+     "save",
+     "$",
+     "REST",
+     "parseISO",
+     "iso",
+     "U",
+     "defaultPlans",
+     "mkPlan",
+     "TYPES",
+     "day",
+     "realBackup",
+     "migrate",
+     "load",
+     "defaultState",
+     "saveSoon"
+    ],
+    "js/fun.js": [
+     "checkEntries",
+     "compareText",
+     "fmtBig"
+    ],
+    "js/views/report.js": [
+     "muscleReadout"
+    ],
+    "js/charts.js": [
+     "drawCharts"
+    ],
+    "js/views/wizard.js": [
+     "wizInit",
+     "wizFinish",
+     "convertUnits"
+    ],
+    "js/views/goals.js": [
+     "goalNow"
+    ],
+    "js/sample.js": [
+     "makeSample"
+    ],
+    "js/views/today.js": [
+     "setupInfo"
+    ]
+   },
+   "writes": [
+    "timer",
+    "EDIT",
+    "realBackup",
+    "S"
+   ],
+   "unknown": [
+    "localStorage",
+    "JSON",
+    "window",
+    "document",
+    "parseFloat",
+    "NaN",
+    "isNaN",
+    "Math",
+    "Date",
+    "String",
+    "Number",
+    "Object",
+    "Blob",
+    "URL",
+    "setTimeout",
+    "navigator",
+    "Array",
+    "parseInt",
+    "FileReader",
+    "clearTimeout"
+   ]
+  },
+  "js/main.js": {
+   "need": {
+    "js/state.js": [
+     "render"
+    ]
+   },
+   "writes": [],
+   "unknown": [
+    "navigator",
+    "location",
+    "window"
+   ]
+  }
+ }
+}

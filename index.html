@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Iron Ledger</title>
+<meta name="description" content="Home gym workout log with plan-based progression, equipment-aware loading, charts and projections. Data stays in your browser.">
+<meta name="theme-color" content="#E8EBE7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#101412" media="(prefers-color-scheme: dark)">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand"><h1>Iron Ledger</h1><span id="sub">Home gym log · pounds</span></div>
+  </header>
+</div>
+<nav class="tabs" aria-label="Sections"><div class="wrap"><div class="tabrow" id="tabs"></div></div></nav>
+<div class="wrap">
+  <div id="banner"></div>
+  <main id="view"></main>
+</div>
+<div id="rest" hidden><div class="in"><div class="t" id="restT">0:00</div><div style="flex:1;display:flex;flex-direction:column;gap:4px"><span class="small" id="restL">Rest</span><div class="bar"><div id="restB"></div></div></div><button data-act="restAdd">+30s</button><button data-act="restStop">Done</button></div></div>
+<div id="modal" hidden></div>
+<div id="toast" class="toast" hidden></div>
+
+<noscript><div class="wrap"><p>Iron Ledger needs JavaScript turned on.</p></div></noscript>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

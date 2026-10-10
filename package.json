@@ -1,0 +1,16 @@
+{
+  "name": "iron-ledger",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Home gym workout log with plan-based progression. Runs in the browser; data stays on your device.",
+  "type": "module",
+  "scripts": {
+    "start": "node tests/server.mjs",
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "sw": "node scripts/update-sw.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.56.0"
+  }
+}
