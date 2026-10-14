@@ -85,7 +85,7 @@ export async function drawPRCard(pr){
 export function prShareButton(pr){ return '<button class="ghost small" data-act="prCard" data-s="'+pr.sid+'" data-ex="'+esc(pr.exId)+'">Share</button>'; }
 
 /* ---------- plan files ---------- */
-const STRIP=['id','runId','start','startedAt','archived'];
+const STRIP=['id','runId','start','startedAt','archived','adjust'];
 export function planPayload(p){
   const plan=JSON.parse(JSON.stringify(p)); STRIP.forEach(k=>delete plan[k]);
   plan.days.forEach(d=>{ delete d.id; d.slots.forEach(s=>delete s.id); });

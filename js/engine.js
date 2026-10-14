@@ -83,7 +83,11 @@ function planStateRaw(plan,until){
   const results={}, stats={}; let next=0; let ss=planSessions(plan);
   if(until) ss=ss.filter(s=>s.id!==until.id&&(s.date<until.date||(s.date===until.date&&(s.createdAt||0)<(until.createdAt||0))));
   let idx=0; const cyc=cycleLen(plan);
+  // Weight changes made from the Today screen take effect at the point in the log where they were made.
+  const adj=(plan.adjust||[]).filter(a=>a.runId===plan.runId);
+  const applyAdj=test=>{ for(const a of adj) if(test(a)){ const st=lifts[a.key]||{stage:0,fails:0,week:0}; lifts[a.key]=Object.assign({},st,{w:a.w,fails:0,cycMiss:false}); } };
   for(const s of ss){
+    applyAdj(a=>a.at===idx);
     for(const e of s.entries){
       if(DERIVED[e.scheme]){ results[s.id+'|'+e.id]={st:null,verdict:e.sets.some(x=>x.done)?'supp':'skip',ok:true,up:false}; continue; }
       if(s.ramp&&s.ramp<1&&lifts[e.key]){ results[s.id+'|'+e.id]={before:lifts[e.key],st:Object.assign({},lifts[e.key]),verdict:e.sets.some(x=>x.done)?'ramp':'skip',ok:true,up:false,ramp:s.ramp}; continue; }
@@ -98,6 +102,7 @@ function planStateRaw(plan,until){
         st.cycMiss=false; for(const e of s.entries) if(e.key===k&&results[s.id+'|'+e.id]){ results[s.id+'|'+e.id].verdict=v; results[s.id+'|'+e.id].st=Object.assign({},st); if(v==='tmup') results[s.id+'|'+e.id].up=true; } } }
     if(plan.days.length) next=((s.dayIndex|0)+1)%plan.days.length;
   }
+  applyAdj(a=>a.at>=idx);
   return {lifts,next,results,stats,count:ss.length,last:ss[ss.length-1]};
 }
 function lastUsed(exId){ let best=null; for(const s of S.sessions){ for(const e of s.entries){ if(e.exId!==exId) continue; const d=e.sets.filter(x=>x.done); if(d.length&&(!best||s.date>=best.d)) best={d:s.date,w:modeWeight(d)}; } } return best&&best.w; }

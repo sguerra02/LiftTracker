@@ -1,6 +1,6 @@
 /* Iron Ledger service worker: works offline, always prefers the newest files when online.
    Bump VERSION when you deploy to clear old caches. */
-const VERSION = 'iron-ledger-v2';
+const VERSION = 'iron-ledger-v3';
 const SHELL = [
   './',
   'index.html',
@@ -13,6 +13,7 @@ const SHELL = [
   'js/core.js',
   'js/engine.js',
   'js/equipment.js',
+  'js/features/adjust.js',
   'js/features/alerts.js',
   'js/features/cardio.js',
   'js/features/comeback.js',

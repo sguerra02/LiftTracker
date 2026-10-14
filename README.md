@@ -1,5 +1,7 @@
 # Iron Ledger
 
+**Live app:** https://liftplanledger.netlify.app/
+
 A home-gym workout log that runs entirely in the browser. It picks your next workout from your last one, keeps every weight loadable with the equipment you own, and charts where you've been and where you're headed.
 
 There are no accounts, no server and no build step. Your data stays in the browser's `localStorage` on your device.
@@ -93,7 +95,11 @@ GitHub Actions (`.github/workflows/test.yml`) runs the suite on every push to `m
 
 The test data in `tests/fixtures/` is made up by the app's sample-data generator, not a real log.
 
-## Deploy to GitHub Pages
+## Deploy
+
+The live copy is on Netlify. With the site linked to this repo, every push to `main` redeploys it. Netlify settings: no build command, publish directory `/` (the repo root).
+
+### GitHub Pages instead
 
 1. Push this folder to a GitHub repository.
 2. Go to **Settings → Pages → Build and deployment**, choose **Deploy from a branch**, then pick `main` and `/ (root)`.

@@ -1,5 +1,5 @@
 /* Iron Ledger — Workout report and body diagram */
-import { S, U, esc, fmtD, fmtDL, fmtW, iso, parseISO } from '../core.js';
+import { DAY, S, U, esc, fmtD, fmtDL, fmtW, iso, parseISO } from '../core.js';
 import { exById } from '../equipment.js';
 import { compareText, fmtBig, fmtMass, massParts, sessionVolume } from '../fun.js';
 import { V } from '../state.js';
@@ -80,12 +80,22 @@ function muscleReadout(){
   const list=Object.entries(by).sort((a,b)=>b[1]-a[1]).map(([id,n])=>esc(exById(id).name)+' <span class="mono">'+(Math.round(n*10)/10)+'</span>').join(' · ');
   return '<div class="row between"><b>'+MUSCLES[k]+'</b><span class="mono">'+(Math.round(v*10)/10).toFixed(1)+' sets</span></div><div class="small muted">'+(list||'Not trained this week.')+'</div>';
 }
+// The workout to compare against: the last time you did this same day (A1 vs A1), from any plan, within the past month.
+// Only when there's none does it fall back to a similar workout (most exercises in common), then to an older same-day workout.
+const SAME_DAY_WINDOW=31;
 function prevSame(s){
   const ss=sortedSessions(); const idx=ss.findIndex(x=>x.id===s.id); const before=ss.slice(0,idx<0?ss.length:idx).reverse();
   const has=x=>x.entries.some(e=>e.sets.some(z=>z.done&&+z.r>0));
-  let m=before.find(x=>x.planId===s.planId&&x.dayName===s.dayName&&has(x));
-  if(!m){ const ids=new Set(s.entries.map(e=>e.exId)); m=before.find(x=>{ const o=new Set(x.entries.filter(e=>ids.has(e.exId)).map(e=>e.exId)).size; return has(x)&&o>0&&o>=Math.ceil(ids.size/2); }); }
-  return m||null;
+  const ids=new Set(s.entries.map(e=>e.exId));
+  const overlap=x=>new Set(x.entries.filter(e=>ids.has(e.exId)).map(e=>e.exId)).size;
+  const similar=x=>overlap(x)>0&&overlap(x)>=Math.ceil(ids.size/2);
+  const sameDay=x=>has(x)&&x.dayName===s.dayName&&(x.planId===s.planId||similar(x));
+  const recent=x=>(parseISO(s.date)-parseISO(x.date))/DAY<=SAME_DAY_WINDOW;
+  return before.find(x=>sameDay(x)&&recent(x))
+    ||before.find(x=>has(x)&&similar(x)&&recent(x))
+    ||before.find(sameDay)
+    ||before.find(x=>has(x)&&similar(x))
+    ||null;
 }
 function exStats(e){ const d=e.sets.filter(x=>x.done&&+x.r>0); if(!d.length) return null; const ex=exById(e.exId);
   return {bw:ex.load==='bodyweight',sets:d.length,reps:d.reduce((a,x)=>a+(+x.r),0),vol:d.reduce((a,x)=>a+(+x.w||0)*(+x.r),0),e1:Math.max(...d.map(x=>{ const w=+x.w||0,r=+x.r; return r>1?w*(1+Math.min(r,30)/30):w; })),best:bestSet(e)}; }
@@ -113,7 +123,7 @@ function lastVsHTML(s){
   let h='<section class="panel"><div><div class="eyebrow">Last workout vs last time</div><h3>'+nm+' · '+fmtDL(s.date)+'</h3>';
   if(!p) return h+'<p class="small muted">First time logging this workout, so there’s nothing to compare yet. Next time you do '+nm+' it’ll show here.</p></div></section>';
   const C=compareSummary(s,p);
-  h+='<div class="small muted">Compared with '+esc(p.dayName===s.dayName?'Day '+p.dayName:'your closest match, Day '+p.dayName)+' on '+fmtDL(p.date)+(p.date.slice(0,4)!==s.date.slice(0,4)?' '+p.date.slice(0,4):'')+'</div></div>';
+  h+='<div class="small muted">Compared with '+(p.dayName===s.dayName?'Day '+esc(p.dayName):'Day '+esc(p.dayName)+' (no '+nm+' in the past month, so this is your closest match)')+' on '+fmtDL(p.date)+(p.date.slice(0,4)!==s.date.slice(0,4)?' '+p.date.slice(0,4):'')+'</div></div>';
   const tiles=[[fmtMass(C.a.vol),'lifted',chg(C.a.vol,C.b.vol,'',true)],[C.a.reps,'reps',chg(C.a.reps,C.b.reps)],[C.up+' of '+C.rows.length,'lifts improved',C.rows.length?'<span class="dl muted">by est. max or reps</span>':'<span class="dl muted">no shared lifts</span>']];
   h+='<div class="tiles t3">'+tiles.map(t=>'<div class="tile"><b class="mono sm">'+t[0]+'</b><span>'+t[1]+'</span>'+t[2]+'</div>').join('')+'</div>';
   h+='<div class="tbl-wrap"><table><thead><tr><th>Exercise</th><th class="num">Now</th><th class="num">Last time</th><th class="num">Change</th></tr></thead><tbody>';

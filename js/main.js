@@ -25,6 +25,7 @@ import './features/comeback.js';
 import './features/plates.js';
 import './features/cardio.js';
 import './features/share.js';
+import './features/adjust.js';
 import { render } from './state.js';
 
 render();

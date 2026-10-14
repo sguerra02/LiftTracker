@@ -318,3 +318,7 @@ label.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:
 .sharebox{max-width:min(440px,100%)}
 .cardprev{display:block;width:100%;max-height:58vh;object-fit:contain;border-radius:10px;border:1px solid var(--line);background:#101412}
 .prrow{grid-template-columns:52px minmax(0,1fr) auto}
+
+/* change upcoming weights */
+.lift .adj{grid-column:1/-1;gap:6px}
+.lift .adj.row{justify-content:flex-start}

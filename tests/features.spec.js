@@ -188,3 +188,63 @@ test.describe('sharing', () => {
     expect(dl.suggestedFilename()).toMatch(/^iron-ledger-pr-.*\.png$/);
   });
 });
+
+test.describe('changing upcoming weights', () => {
+  test('a new weight applies to the next workout and progression continues from it', async ({ page }) => {
+    await seed(page, shiftLog(fixture(), 1));
+    await page.goto('/');
+    const lift = page.locator('.lift').first();
+    await lift.locator('[data-act=adjOpen]').click();
+    await page.locator('#adj-w').fill('95');
+    await page.locator('[data-act=adjSave]').click();
+    await expect(lift).toContainText('95 lb');
+    await expect(lift).toContainText('Changed from');
+    await page.locator('[data-act=startWorkout]').click();
+    const w = await page.evaluate(() => JSON.parse(localStorage.getItem('ironledger.v1')).current.entries[0].sets[0].w);
+    expect(w).toBe(95);
+    await finishWorkout(page);
+    await page.locator('[data-act=dismissResult]').click();
+    // the change survives reloads and stays in effect for later workouts of that lift
+    const base = await page.evaluate(async () => { const e = await import('/js/engine.js'); const p = e.activePlan(); const ps = e.planState(p); const k = p.days[0].slots[0]; return ps.lifts[e.slotKey(p, k)].w; });
+    expect(base).toBeGreaterThanOrEqual(95);
+    expect(base).toBeLessThan(110);
+  });
+
+  test('a change can be undone', async ({ page }) => {
+    await seed(page, shiftLog(fixture(), 1));
+    await page.goto('/');
+    const lift = page.locator('.lift').first();
+    const before = await lift.locator('.rx').innerText();
+    await lift.locator('[data-act=adjOpen]').click();
+    await page.locator('#adj-w').fill('300');
+    await page.locator('[data-act=adjSave]').click();
+    await expect(lift.locator('.rx')).not.toHaveText(before);
+    await lift.locator('[data-act=adjUndo]').click();
+    await expect(lift.locator('.rx')).toHaveText(before);
+  });
+});
+
+test.describe('report comparison', () => {
+  const lastOf = d => d.sessions.slice().sort((a, b) => a.date < b.date ? -1 : 1).at(-1);
+
+  test('compares with the same day even from an earlier plan', async ({ page }) => {
+    const d = shiftLog(fixture(), 0);
+    const last = lastOf(d);
+    for (const s of d.sessions) if (s !== last) s.planId = 'older-plan';
+    await seed(page, d);
+    await page.goto('/');
+    await open(page, 'progress', 'report');
+    await expect(view(page)).toContainText(`Compared with Day ${last.dayName} on`);
+  });
+
+  test('falls back to a similar day only when the same day is over a month old', async ({ page }) => {
+    const d = shiftLog(fixture(), 0);
+    const last = lastOf(d);
+    const cut = daysAgo(31);
+    d.sessions = d.sessions.filter(s => s === last || s.dayName !== last.dayName || s.date < cut);
+    await seed(page, d);
+    await page.goto('/');
+    await open(page, 'progress', 'report');
+    await expect(view(page)).toContainText('so this is your closest match');
+  });
+});

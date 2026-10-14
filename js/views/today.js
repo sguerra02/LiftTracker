@@ -11,6 +11,7 @@ import { goalNow, goalReached } from './goals.js';
 import { backupDue } from './data.js';
 import { cardioTodayHTML } from '../features/cardio.js';
 import { prShareButton } from '../features/share.js';
+import { adjustHTML } from '../features/adjust.js';
 import { comebackHTML, comebackInfo, rampTarget } from '../features/comeback.js';
 
 /* ---------- TODAY ---------- */
@@ -40,7 +41,7 @@ function viewTodayMain(){
     if(miss.length) ld='<span class="lw warn">Needs '+esc(miss.join(', '))+'. You can swap it when you start.</span>';
     else if(sc==='W') ld='<span class="lw mono">'+t.rows.map(r=>Math.round(r.pct*100)+'% '+fmtW(r.w)).join(' · ')+'</span> '+loadHTML(ex,t.rows[t.rows.length-1].w);
     else ld=loadHTML(ex,t.w);
-    h+='<div class="lift"><div class="nm">'+esc(ex.name)+' '+schemeChip(sc,t)+'</div><div class="rx">'+tgtText(t)+' <small>'+esc(wtText(ex,t))+'</small></div><div class="ld">'+ld+'</div></div>';
+    h+='<div class="lift"><div class="nm">'+esc(ex.name)+' '+schemeChip(sc,t)+'</div><div class="rx">'+tgtText(t)+' <small>'+esc(wtText(ex,t))+'</small></div><div class="ld">'+ld+'</div>'+adjustHTML(plan,s,ps,t)+'</div>';
   }
   h+='</div>'+goalStrip()+'<p class="small muted">'+ps.count+' session'+(ps.count===1?'':'s')+' logged since '+fmtDL(ps.count&&planSessions(plan)[0].date<plan.startedAt?planSessions(plan)[0].date:plan.startedAt)+' · '+(plan.mode==='progress'?'Progress mode: weight goes up when you hit your targets.':'Maintain mode: weight holds steady and drops only after repeated misses.')+'</p></section>';
   return h;
